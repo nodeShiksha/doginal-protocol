@@ -1,0 +1,81 @@
+Installation of ord
+Secure Download: Use curl with HTTPS and TLS 1.2 settings for secure connection:
+
+bash
+Copy code
+curl --proto '=https' --tlsv1.2 -fsLS https://ordinals.com/install.sh | bash -s
+Verify Installation: After installing, confirm the installation by checking the ord version:
+
+bash
+Copy code
+ord --version
+Building from Source
+For building ord from the source on Debian or Ubuntu systems, follow these steps:
+
+Install Dependencies:
+
+Install libssl-dev for SSL support:
+bash
+Copy code
+sudo apt-get install libssl-dev
+Install Rust programming language:
+bash
+Copy code
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+Clone and Build:
+
+Clone the ord repository:
+bash
+Copy code
+git clone https://github.com/casey/ord.git
+Navigate to the ord directory:
+bash
+Copy code
+cd ord
+Build the project using Cargo (Rust's package manager):
+bash
+Copy code
+cargo build --release
+Binary Location: Post-build, the ord binary will be located at:
+
+arduino
+Copy code
+./target/release/ord
+Rust Version Requirement: Ensure you have Rust compiler version 1.67.0 or newer:
+
+Check Rust version:
+bash
+Copy code
+rustc --version
+Update Rust to the latest stable release if necessary:
+bash
+Copy code
+rustup update
+Syncing with dogecoind
+ord requires a synced dogecoind node. Here’s how to set it up:
+
+Node Requirement: You need a dogecoind node with -txindex to build the index of Satoshi locations.
+
+RPC Communication: ord communicates with dogecoind via RPC. If dogecoind is run locally by the same user, ord should automatically find it by reading the .cookie file from dogecoind's data directory and connect using the default RPC port.
+
+Configuration for Non-Standard Setups: If your setup doesn’t match the default (e.g., different network, data directory, user, or port), you need to pass additional flags to ord. Use ord --help for more information.
+
+Logging
+For logging in ord:
+
+Enable Logging: ord uses env_logger. Set the RUST_LOG environment variable to enable logging.
+For example, to run the server and show info-level log messages:
+bash
+Copy code
+RUST_LOG=info cargo run server
+Release Process
+For new releases of ord:
+
+Commit Message Template: Use the following template for release commit messages:
+Release x.y.z
+Bump version: x.y.z → x.y.z+1
+Update changelog
+Update dependencies
+Update database schema version
+This guide should help you install, build, and configure ord effectively on your system.
+

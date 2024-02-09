@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options page</title>
+    <link rel="stylesheet" href="../popup/popup.css">
+</head>
+<style>
+    main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 10px #ddd;
+    }
+
+    input[type='text'],
+    button {
+        width: 300px !important;
+        border: 1px solid #ebebeb;
+    }
+
+    #reset_button {
+        width: 100% !important;
+    }
+
+    label {
+        font-size: small;
+        color: gray;
+    }
+
+    body {
+        width: 100%;
+        min-width: 400px;
+        min-height: 500px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .private-key {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: gray;
+        padding: 10px;
+        font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        margin: 10px;
+        transition: .4s;
+    }
+    .private-key:hover {
+        box-shadow: 0 0 10px #ddd;
+        border-radius: 10px;
+    }
+    .input-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input {
+        width: fit-content;
+    }
+    #accept_reset_checkbox {
+        width: 10px !important;
+    }
+    small {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <main>
+        <h1>Choose your own</h1>
+        <div class="input-container">
+            <label>
+                Private Key <br>
+                <input type="text" id="privkey"></input>
+            </label>
+            <label for="">
+                Mnemonic <br>
+                <input type="text" id="mnemonic"></input>
+            </label>
+            <label for="">
+                Derivation <br>
+                <input type="text" id="derivation"></input>
+            </label>
+            <div class="private-key">
+                <input type="checkbox" id="accept_reset_checkbox" />
+                <small>By clicking this button I accept there will be no way to recover my private keys and
+                    mnemonics.</small> 
+            </div>
+            <button id="reset_button">Reset</button>
+        </div>
+    </main>
+
+</body>
+
+<script src="options.js"></script>
+
+</html>

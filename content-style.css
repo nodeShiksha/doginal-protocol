@@ -1,0 +1,17 @@
+#doginals-main-page {
+    position: fixed;
+    top: 5px;
+    right: 5px; 
+    z-index: 10000000000; 
+    background: rgb(255, 255, 255);  
+    height: fit-content;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 2px solid blue;
+}
+#doginals-main-page iframe {
+    width: 300px;
+    height: 450px;
+    border: none;
+    outline: none;
+} 

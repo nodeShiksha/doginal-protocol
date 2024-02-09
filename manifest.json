@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Ordie Woof Wallet",
+  "version": "0.0.1",
+
+  "description": "Send and receive doginals using Woof Wallet",
+  "homepage_url": "https://github.com/Ordies/ordie-woof-wallet",
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+  "permissions": ["storage", "tabs", "unlimitedStorage", "webRequest", "scripting", "activeTab", "nativeMessaging"],
+  "host_permissions": ["<all_urls>", "*://dogechain.info/*", "*://dogecoin.earlyordies.com/*", "*://api.blockchair.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./popup/content-script.js"],
+      "css": ["./popup/content-style.css"]
+    }
+  ],
+  "action": {
+    "default_icon": "icons/icon-32.png" 
+  }, 
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "extension_ids": [],
+      "matches": ["\u003Call_urls>"],
+      "resources": ["popup/*"]
+    }
+  ]
+}

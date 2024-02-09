@@ -1,0 +1,314 @@
+body {
+  background: #f5f5f5;
+  font-family: sans-serif;
+  width: 300px;
+  height: 400px;
+  margin: 0px;
+}
+:root {
+  --gra: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(191, 25, 255, 1) 0%, rgba(0, 104, 255, 1) 100%);
+}
+h1,
+h2 {
+  font-size: 32px;
+  background: var(--gra);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  width: 80%;
+  border: 2px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0px 20px 20px 20px;
+  background-image: var(--gra);
+  color: #ffffff;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#terms {
+  font-size: 0.95em;
+  color: #555;
+  margin-left: 15px;
+  margin-right: 15px;
+  flex: 1;
+}
+
+.setup_option {
+  flex: 1;
+}
+
+#mnemonic {
+  width: 80%;
+  flex: 1;
+  font-size: 1.3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
+  width: 80%;
+  font-size: 1.3em;
+  flex: 1;
+  margin-bottom: 20px;
+  resize: none;
+  border: 1px solid #efefef;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+#header {
+  background-image: var(--gra);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.header_row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.header_row > * {
+    color: white;
+}
+#address { 
+  flex: 1;
+  padding: 10px;
+  user-select: all;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* #copy_address_button {
+  border-radius: 0px;
+  background-size: contain;
+  background-image: url(images/copy_to_clipboard.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+  margin-right: 10px;
+} */
+.reload-page {
+  cursor: pointer; 
+  text-align: center;
+  width: 20px; 
+  padding: 5px;
+  font-size: 16px;
+  color: rgb(0, 183, 255);
+  margin-left: 40;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 104, 255, 1);
+  margin: 10px;
+  transition: .4s;
+  margin-left: 45%;
+  margin-top: 3px;
+  user-select: none;
+}
+.reload-page:hover {
+  background: rgb(0, 183, 255);
+  border: 1px dotted;
+  color: white;
+}
+#doginals {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: safe center;
+  justify-content: safe start;
+  flex: 1;
+  width: 100%;
+  overflow: auto;
+}
+
+.doginals_row {
+  padding: 0px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+.pending {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.doginal {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 120px;
+  height: 120px;
+  background-image: var(--gra);
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.doginals_row_spacer {
+  width: 10px;
+}
+
+#view_doginal_page {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 10px;
+}
+
+#doginal_content {
+  width: 200px;
+  height: 200px;
+  background-image: var(--gra);
+  background-size: contain;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#doginal_send_button {
+  margin-bottom: 0px;
+}
+
+#doginal_inscription_id {
+  font-size: 0.5em;
+}
+
+.inscription_text {
+  text-align: left !important;
+  align-items: start !important;
+  justify-content: start !important;
+}
+
+#error_page {
+  background: white;
+  color: red;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+#error_message {
+  text-align: center;
+  padding: 10px;
+  margin: 0px;
+  width: 80%;
+}
+
+#sent_txid {
+  font-size: 0.5em;
+}
+
+#doginal_inscription_number {
+  color: #555;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#doginal_inscription_id {
+  color: #555;
+}
+
+input[type="text"] {
+  width: 200px;
+  border-radius: 20px; 
+  color: #a0d18c;
+  height: 30px;
+  padding-left: 10px;
+}
+ 
+
+body {
+ 
+  background: #f5f5f5;
+}
+button,
+input {
+  padding: 10px;
+  border: 0px;
+  margin: 2px;
+  outline: none;
+  border-radius: 10px;
+  min-width: 70px;
+}
+input:focus,
+button:focus {
+  background: #eeeeee !important;
+  color: black !important;
+  border: 1px solid rgb(0, 102, 255) !important;
+}
+input {
+  width: 200px;
+}
+button {
+  background-color: #0000;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+button:hover {
+  background: radial-gradient(rgb(0, 81, 255), rgb(0, 238, 255));
+  color: rgb(219, 219, 219);
+}  
